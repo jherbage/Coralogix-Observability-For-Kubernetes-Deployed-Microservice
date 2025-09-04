@@ -1,0 +1,22 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: RabbitmqCluster
+metadata:
+  name: simple-rabbitmq
+  namespace: demo
+spec:
+  replicas: 1
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 100m
+    limits:
+      memory: 512Mi
+      cpu: 200m
+  rabbitmq:
+    additionalConfig: |
+      management.tcp.port = 15672
+      default_user = admin
+      default_pass = adminpassword
+  persistence:
+    storageClassName: standard
+    storage: 1Gi
