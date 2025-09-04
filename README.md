@@ -40,3 +40,4 @@ This repository allows you to spin up a PoC Open Telemetry based observability d
 
 ## TO-DO
 1. Is it possible to create the k8s integration cluster in the Coralogix API programmatically?
+2. Still playing with getting cross service span propagation to work. I can hack it by setting the traceID to be same but propagation should work based on setting the parent trace ID.
